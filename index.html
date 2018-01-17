@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>选择副签约客户经理</title>
+    <script src="/WebResources/hd_jquery.js"></script>
+</head>
+
+<body style="word-wrap:break-word;">
+    <form action="http://www.baidu.com/s" method="get" onsubmit="return onClick()">
+
+        <input type="text" name="wd" nValidate="{required:true,message:{required:'名称不能为空'}}"></input>
+        <input type="submit" value="开始校验" />
+
+        <input type="text" name="txtonchangeTest" onchange="checkField(this.value)" nValidate="{required:true,message:{required:'名称不能为空'}}"></input>
+        <input type="text" disabled="disabled" name="txtSystemUser" id="txtUser" />
+        <input type="button" name="changevalue" value="change text" onclick="setvalue()" />
+
+    </form>
+
+    <a href="js_getvalueTest.html?Data={0ED28F83-D692-E711-80D9-005056A94CCE}">go to</link>
+        <br />
+        <a href="confirmed.html">go to confirm page</a>
+        <br />
+        <a href="upload.html">文件上传</a>
+        <br/>
+        <a href="mvc_upload.html">MVC文件上传</a>
+        <br/>
+        <a href="test/attach/index" target="_blank">文件预览</a>
+        <br/>
+        <a href="JC.CRM.WebApi" target="_blank">VipAPI</a>
+        <br/>
+        <a href="AppendLi.html" target="_blank">动态添加元素</a>
+        <br/>
+        <a href="http://localhost/Identity2Study">Identity2Study</a>
+        <br/>
+        <a href="http://localhost/CRM2016.Website">CrmWebSite</a>
+
+        <script type="text/javascript">
+
+            function onClick() {
+                var keyword = $('input[name="wd"]').val();
+                console.log(keyword);
+                if (keyword.length == 0) {
+                    alert("keyword must be not null");
+                    return false;
+                }
+                else {
+                    return true;
+                }
+
+                alert("hello world");
+                return false;
+            }
+
+            function checkField(input_value) {
+                console.log("text input is changed : " + input_value);
+            }
+
+            function setvalue() {
+                $('input[name="txtonchangeTest"]').val("abc");
+            }
+
+            $(document).ready(function () {
+                $('input[name="txtonchangeTest"]').change(function () {
+                    $(this).css("background-color", "#FFFFCC");
+                });
+            });
+        </script>
+
+</body>
+
+</html>
